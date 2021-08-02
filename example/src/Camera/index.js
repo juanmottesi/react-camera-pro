@@ -30,7 +30,7 @@ var Container = styled.div(templateObject_2 || (templateObject_2 = __makeTemplat
         ? "\n    position: absolute;\n    bottom: 0\n    top: 0\n    left: 0\n    right: 0"
         : "\n    position: relative;\n    padding-bottom: " + 100 / aspectRatio + "%;";
 });
-var ErrorMsg = styled.div(templateObject_3 || (templateObject_3 = __makeTemplateObject(["\n  padding: 40px;\n"], ["\n  padding: 40px;\n"])));
+var ErrorMsg = styled.div(templateObject_3 || (templateObject_3 = __makeTemplateObject(["\n  padding: 0px;\n"], ["\n  padding: 0px;\n"])));
 var Cam = styled.video(templateObject_4 || (templateObject_4 = __makeTemplateObject(["\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n  z-index: 0;\n  transform: rotateY(", ");\n"], ["\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n  z-index: 0;\n  transform: rotateY(", ");\n"])), function (_a) {
     var mirrored = _a.mirrored;
     return (mirrored ? '180deg' : '0deg');
@@ -60,7 +60,7 @@ var Camera = React.forwardRef(function (_a, ref) {
         takePhoto: function () {
             var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
             if (numberOfCameras < 1) {
-                throw new Error(errorMessages.noCameraAccessible);
+                throw new Error('errorMessages.noCameraAccessible');
             }
             if ((_a = canvas) === null || _a === void 0 ? void 0 : _a.current) {
                 var playerWidth = ((_c = (_b = player) === null || _b === void 0 ? void 0 : _b.current) === null || _c === void 0 ? void 0 : _c.videoWidth) || 1280;
@@ -92,12 +92,12 @@ var Camera = React.forwardRef(function (_a, ref) {
                 return imgData;
             }
             else {
-                throw new Error(errorMessages.canvas);
+                throw new Error('errorMessages.canvas');
             }
         },
         switchCamera: function () {
             if (numberOfCameras < 1) {
-                throw new Error(errorMessages.noCameraAccessible);
+                throw new Error('errorMessages.noCameraAccessible');
             }
             else if (numberOfCameras < 2) {
                 console.error('Error: Unable to switch camera. Only one device is accessible.'); // console only

@@ -1,7 +1,7 @@
 {
   "name": "react-camera-pro-2",
   "description": "Universal Camera component for React. Designed with focus on Android, iOS cameras and standard webcams.",
-  "version": "1.1.0",
+  "version": "1.0.0",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
   "keywords": [
@@ -15,11 +15,11 @@
     "webRTC"
   ],
   "repository": {
-    "url": "https://github.com/purple-technology/react-camera-pro",
+    "url": "https://github.com/juanmottesi/react-camera-pro-2",
     "type": "git"
   },
-  "homepage": "https://github.com/purple-technology/react-camera-pro#readme",
-  "author": "Martin Urban <murban@purple-technology.com>",
+  "homepage": "https://github.com/juanmottesi/react-camera-pro-2#readme",
+  "author": "juanmottesi",
   "license": "MIT",
   "types": "dist/index.d.ts",
   "dependencies": {

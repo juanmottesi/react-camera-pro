@@ -11,10 +11,10 @@ export interface CameraProps {
     aspectRatio?: AspectRatio;
     numberOfCamerasCallback?(numberOfCameras: number): void;
     errorMessages: {
-        noCameraAccessible?: string;
-        permissionDenied?: string;
-        switchCamera?: string;
-        canvas?: string;
+        noCameraAccessible?: React.ReactNode;
+        permissionDenied?: React.ReactNode;
+        switchCamera?: React.ReactNode;
+        canvas?: React.ReactNode;
     };
 }
 export declare type CameraType = React.ForwardRefExoticComponent<CameraProps & React.RefAttributes<unknown>> & {
