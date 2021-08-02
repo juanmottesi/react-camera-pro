@@ -42,7 +42,7 @@ export const Camera = React.forwardRef<unknown, CameraProps>(
     useImperativeHandle(ref, () => ({
       takePhoto: () => {
         if (numberOfCameras < 1) {
-          throw new Error(errorMessages.noCameraAccessible);
+          throw new Error('errorMessages.noCameraAccessible');
         }
 
         if (canvas?.current) {
@@ -79,12 +79,12 @@ export const Camera = React.forwardRef<unknown, CameraProps>(
           const imgData = canvas.current.toDataURL('image/jpeg');
           return imgData;
         } else {
-          throw new Error(errorMessages.canvas);
+          throw new Error('errorMessages.canvas');
         }
       },
       switchCamera: () => {
         if (numberOfCameras < 1) {
-          throw new Error(errorMessages.noCameraAccessible);
+          throw new Error('errorMessages.noCameraAccessible');
         } else if (numberOfCameras < 2) {
           console.error('Error: Unable to switch camera. Only one device is accessible.'); // console only
         }
