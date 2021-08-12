@@ -27,12 +27,13 @@ export const ErrorMsg = styled.div`
   padding: 0px;
 `;
 
-export const Cam = styled.video<{ mirrored: boolean }>`
+export const Cam = styled.video<{ mirrored: boolean; show: boolean }>`
   width: 100%;
   height: 100%;
   object-fit: cover;
   z-index: 0;
   transform: rotateY(${({ mirrored }) => (mirrored ? '180deg' : '0deg')});
+  display: ${({ show }) => (show ? 'block' : 'none')};
 `;
 
 export const Canvas = styled.canvas`

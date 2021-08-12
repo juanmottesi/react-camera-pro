@@ -126,6 +126,7 @@ export const Camera = React.forwardRef<unknown, CameraProps>(
             autoPlay={true}
             playsInline={true}
             mirrored={currentFacingMode === 'user' ? true : false}
+            show={!(notSupported || permissionDenied)}
           ></Cam>
           <Canvas ref={canvas} />
         </Wrapper>

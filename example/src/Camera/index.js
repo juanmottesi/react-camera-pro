@@ -31,9 +31,12 @@ var Container = styled.div(templateObject_2 || (templateObject_2 = __makeTemplat
         : "\n    position: relative;\n    padding-bottom: " + 100 / aspectRatio + "%;";
 });
 var ErrorMsg = styled.div(templateObject_3 || (templateObject_3 = __makeTemplateObject(["\n  padding: 0px;\n"], ["\n  padding: 0px;\n"])));
-var Cam = styled.video(templateObject_4 || (templateObject_4 = __makeTemplateObject(["\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n  z-index: 0;\n  transform: rotateY(", ");\n"], ["\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n  z-index: 0;\n  transform: rotateY(", ");\n"])), function (_a) {
+var Cam = styled.video(templateObject_4 || (templateObject_4 = __makeTemplateObject(["\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n  z-index: 0;\n  transform: rotateY(", ");\n  display: ", ";\n"], ["\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n  z-index: 0;\n  transform: rotateY(", ");\n  display: ", ";\n"])), function (_a) {
     var mirrored = _a.mirrored;
     return (mirrored ? '180deg' : '0deg');
+}, function (_a) {
+    var show = _a.show;
+    return (show ? 'block' : 'none');
 });
 var Canvas = styled.canvas(templateObject_5 || (templateObject_5 = __makeTemplateObject(["\n  display: none;\n"], ["\n  display: none;\n"])));
 var templateObject_1, templateObject_2, templateObject_3, templateObject_4, templateObject_5;
@@ -129,7 +132,7 @@ var Camera = React.forwardRef(function (_a, ref) {
         React.createElement(Wrapper, null,
             notSupported ? React.createElement(ErrorMsg, null, errorMessages.noCameraAccessible) : null,
             permissionDenied ? React.createElement(ErrorMsg, null, errorMessages.permissionDenied) : null,
-            React.createElement(Cam, { ref: player, id: "video", muted: true, autoPlay: true, playsInline: true, mirrored: currentFacingMode === 'user' ? true : false }),
+            React.createElement(Cam, { ref: player, id: "video", muted: true, autoPlay: true, playsInline: true, mirrored: currentFacingMode === 'user' ? true : false, show: !(notSupported || permissionDenied) }),
             React.createElement(Canvas, { ref: canvas }))));
 });
 Camera.displayName = 'Camera';

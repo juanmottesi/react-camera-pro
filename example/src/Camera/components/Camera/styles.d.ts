@@ -6,5 +6,6 @@ export declare const Container: import("styled-components").StyledComponent<"div
 export declare const ErrorMsg: import("styled-components").StyledComponent<"div", any, {}, never>;
 export declare const Cam: import("styled-components").StyledComponent<"video", any, {
     mirrored: boolean;
+    show: boolean;
 }, never>;
 export declare const Canvas: import("styled-components").StyledComponent<"canvas", any, {}, never>;
